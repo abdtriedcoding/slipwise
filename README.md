@@ -1,24 +1,23 @@
 <a href="https://github.com/abdtriedcoding/receipthero">
-  <img alt="ReceiptHero" src="./public/og.png">
-  <h1 align="center">ReceiptHero</h1>
+  <img alt="Slipwise" src="./public/og.png">
+  <h1 align="center">Slipwise</h1>
 </a>
 
 <p align="center">
-  An open source receipt management app with AI-powered OCR. Powered by Together.ai.
+  An open source receipt management app with AI-powered OCR. Powered by Cohere.
 </p>
 
 ## Tech stack
 
 - Next.js app router with Tailwind CSS
-- Together AI for LLM-powered OCR
-- Qwen3.5 9B for receipt data extraction
+- Cohere Command A Vision for receipt data extraction
 - shadcn/ui components with Radix UI
 - Zod for data validation
 
 ## How it works
 
 1. Upload receipt images via drag & drop or file selection
-2. Send images to Together AI's Qwen3.5 vision model for OCR processing
+2. Send images to Cohere's Command A Vision model for OCR processing
 3. Extract structured data: vendor, date, amount, items, currency, payment method
 4. Automatically categorize expenses (groceries, dining, gas, etc.)
 5. Display spending breakdown and receipt management interface
@@ -27,6 +26,6 @@
 ## Cloning & running
 
 1. Clone the repo: `git clone https://github.com/abdtriedcoding/receipthero.git`
-2. Create an account at [Together AI](https://togetherai.link/?utm_source=receipthero&utm_medium=referral&utm_campaign=example-app) for the OCR API
-3. Create a `.env` file (use `.example.env` for reference) and add your API key
+2. Create a [Cohere API key](https://dashboard.cohere.com/api-keys)
+3. Create a `.env.local` file (use `.example.env` for reference) and set `COHERE_API_KEY`
 4. Run `npm install` and `npm run dev` to install dependencies and run locally
