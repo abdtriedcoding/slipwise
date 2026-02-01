@@ -1,7 +1,13 @@
 {
-  "name": "receipthero",
+  "name": "@abdtriedcoding/receipthero",
   "version": "0.1.0",
   "private": true,
+  "author": "Abdullah <abdtriedcoding@users.noreply.github.com> (https://github.com/abdtriedcoding)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdtriedcoding/receipthero.git"
+  },
+  "homepage": "https://github.com/abdtriedcoding/receipthero#readme",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

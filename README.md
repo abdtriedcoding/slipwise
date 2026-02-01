@@ -1,4 +1,4 @@
-<a href="https://www.receipthero.app">
+<a href="https://github.com/abdtriedcoding/receipthero">
   <img alt="ReceiptHero" src="./public/og.png">
   <h1 align="center">ReceiptHero</h1>
 </a>
@@ -26,7 +26,7 @@
 
 ## Cloning & running
 
-1. Fork or clone the repo
+1. Clone the repo: `git clone https://github.com/abdtriedcoding/receipthero.git`
 2. Create an account at [Together AI](https://togetherai.link/?utm_source=receipthero&utm_medium=referral&utm_campaign=example-app) for the OCR API
 3. Create a `.env` file (use `.example.env` for reference) and add your API key
 4. Run `npm install` and `npm run dev` to install dependencies and run locally
