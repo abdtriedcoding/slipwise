@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/ui/toast";
 import PlausibleProvider from "next-plausible";
 
-const kumbhSans = Kumbh_Sans({
-  subsets: ["latin"],
-  variable: "--font-kumbh-sans",
-});
-
 export const metadata: Metadata = {
-  title: "Receipt Hero - Organize Your Receipts",
+  title: "Slipwise - Organize Your Receipts",
   description:
     "Instantly convert invoices into clear, categorized summaries. Upload your receipts and get organized spending insights.",
   openGraph: {
@@ -26,9 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <PlausibleProvider domain="usereceipthero.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@700&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
+        <PlausibleProvider domain="usereceipthero.com" />
       </head>
-      <body className={`${kumbhSans.variable} antialiased`}>
+      <body>
         <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
