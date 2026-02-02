@@ -27,7 +27,7 @@ function getLimiters(): Limiters | null {
     }),
     burst: new Ratelimit({
       redis,
-      prefix: 'receipthero:burst',
+      prefix: 'slipwise:burst',
       limiter: Ratelimit.slidingWindow(15, '1 m'),
       timeout: 0,
     }),

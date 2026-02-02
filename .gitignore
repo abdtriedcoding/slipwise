@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# hallmark audit artifacts
+.hallmark/
+
+# local test captures
+ocr-test-screenshot.png
+hallmark-redesign-screenshot.png
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

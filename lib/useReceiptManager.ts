@@ -10,7 +10,7 @@ interface StoredData {
   breakdown: SpendingBreakdown | null;
 }
 
-const STORAGE_KEY = 'receipt-hero-data';
+const STORAGE_KEY = 'slipwise-data';
 
 const readFileAsBase64 = (file: File): Promise<{ base64: string; mimeType: string }> => {
   return new Promise((resolve, reject) => {
@@ -131,7 +131,7 @@ const toStoredReceipt = (receipt: ProcessedReceipt): StoredReceipt => ({
 
 // Convert StoredReceipt to ProcessedReceipt (load thumbnail from separate storage)
 const fromStoredReceipt = async (stored: StoredReceipt): Promise<ProcessedReceipt> => {
-  const thumbnailKey = `receipt-hero-thumbnail-${stored.id}`;
+  const thumbnailKey = `slipwise-thumbnail-${stored.id}`;
   const thumbnail = localStorage.getItem(thumbnailKey) || '/placeholder.svg';
 
   return {
@@ -183,7 +183,7 @@ export function useReceiptManager() {
       // Save thumbnails separately
       for (const receipt of receipts) {
         if (receipt.thumbnail && receipt.thumbnail !== '/placeholder.svg' && !receipt.thumbnail.startsWith('/')) {
-          const thumbnailKey = `receipt-hero-thumbnail-${receipt.id}`;
+          const thumbnailKey = `slipwise-thumbnail-${receipt.id}`;
           localStorage.setItem(thumbnailKey, receipt.thumbnail);
         }
       }
@@ -409,7 +409,7 @@ export function useReceiptManager() {
     const updatedReceipts = receipts.filter(receipt => receipt.id !== receiptId);
 
     // Remove thumbnail from localStorage
-    const thumbnailKey = `receipt-hero-thumbnail-${receiptId}`;
+    const thumbnailKey = `slipwise-thumbnail-${receiptId}`;
     localStorage.removeItem(thumbnailKey);
 
     if (updatedReceipts.length === 0) {
@@ -435,7 +435,7 @@ export function useReceiptManager() {
     // Remove all thumbnails
     const keys = Object.keys(localStorage);
     keys.forEach(key => {
-      if (key.startsWith('receipt-hero-thumbnail-')) {
+      if (key.startsWith('slipwise-thumbnail-')) {
         localStorage.removeItem(key);
       }
     });
