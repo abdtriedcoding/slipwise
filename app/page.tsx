@@ -26,7 +26,6 @@ export default function HomePage() {
   const handleProcessFiles = async (uploadedFiles: UploadedFile[]) => {
     const result = await addReceipts(uploadedFiles);
 
-    // Show toast message for duplicates
     if (result.duplicatesCount > 0) {
       addToast(
         `${result.duplicatesCount} duplicate receipt${
@@ -36,7 +35,6 @@ export default function HomePage() {
       );
     }
 
-    // Show success message if new receipts were added
     const newReceiptsCount = result.receipts.length - receipts.length;
     if (newReceiptsCount > 0) {
       addToast(
@@ -51,13 +49,10 @@ export default function HomePage() {
   const handleAddMoreReceipts = async () => {
     const files = await selectFiles();
     if (files.length > 0) {
-      // Start processing only after files are actually selected
       startProcessing();
-      // Process files first, then add receipts
       const processedFiles = await processFiles(files);
       const result = await addReceipts(processedFiles);
 
-      // Show toast message for duplicates
       if (result.duplicatesCount > 0) {
         addToast(
           `${result.duplicatesCount} duplicate receipt${
@@ -67,7 +62,6 @@ export default function HomePage() {
         );
       }
 
-      // Show success message if new receipts were added
       const newReceiptsCount = result.receipts.length - receipts.length;
       if (newReceiptsCount > 0) {
         addToast(
@@ -78,7 +72,6 @@ export default function HomePage() {
         );
       }
     }
-    // If no files selected, don't start processing at all
   };
 
   const handleDeleteReceipt = (receiptId: string) => {
@@ -89,13 +82,12 @@ export default function HomePage() {
     clearAll();
   };
 
-  // Show loading state while data is being loaded from localStorage
   if (!isLoaded) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading your receipts...</p>
+      <div className="loading-screen">
+        <div className="loading-body">
+          <div className="loader keep-motion" aria-hidden="true" />
+          <p className="loading-text">Loading your receipts…</p>
         </div>
       </div>
     );

@@ -2,6 +2,7 @@
 
 import SidebarReceipts from "./SidebarReceipts";
 import TableReceipts from "./TableReceipts";
+import Header from "./Header";
 import Footer from "./Footer";
 import type { ProcessedReceipt, SpendingBreakdown } from "@/lib/types";
 
@@ -23,21 +24,23 @@ export default function ResultsPage({
   isProcessing,
 }: ResultsPageProps) {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-      <div className="flex flex-col md:flex-row flex-grow">
-        <SidebarReceipts
-          processedReceipts={processedReceipts}
-          spendingBreakdown={spendingBreakdown}
-          onAddMoreReceipts={onAddMoreReceipts}
-          isProcessing={isProcessing}
-        />
-        <TableReceipts
-          processedReceipts={processedReceipts}
-          onDeleteReceipt={onDeleteReceipt}
-          onStartOver={onStartOver}
-        />
+    <div className="app-shell">
+      <Header />
+      <div className="app-main">
+        <div className="results-grid">
+          <SidebarReceipts
+            processedReceipts={processedReceipts}
+            spendingBreakdown={spendingBreakdown}
+            onAddMoreReceipts={onAddMoreReceipts}
+            isProcessing={isProcessing}
+          />
+          <TableReceipts
+            processedReceipts={processedReceipts}
+            onDeleteReceipt={onDeleteReceipt}
+            onStartOver={onStartOver}
+          />
+        </div>
       </div>
-
       <Footer />
     </div>
   );
