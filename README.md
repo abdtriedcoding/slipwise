@@ -1,4 +1,4 @@
-<a href="https://github.com/abdtriedcoding/receipthero">
+<a href="https://github.com/abdtriedcoding/slipwise">
   <img alt="Slipwise" src="./public/og.png">
   <h1 align="center">Slipwise</h1>
 </a>
@@ -25,7 +25,7 @@
 
 ## Cloning & running
 
-1. Clone the repo: `git clone https://github.com/abdtriedcoding/receipthero.git`
+1. Clone the repo: `git clone https://github.com/abdtriedcoding/slipwise.git`
 2. Create a [Cohere API key](https://dashboard.cohere.com/api-keys)
 3. Create a `.env.local` file (use `.example.env` for reference) and set `COHERE_API_KEY`
 4. Run `npm install` and `npm run dev` to install dependencies and run locally

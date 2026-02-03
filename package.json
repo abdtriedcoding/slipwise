@@ -5,9 +5,9 @@
   "author": "Abdullah <abdtriedcoding@users.noreply.github.com> (https://github.com/abdtriedcoding)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abdtriedcoding/receipthero.git"
+    "url": "git+https://github.com/abdtriedcoding/slipwise.git"
   },
-  "homepage": "https://github.com/abdtriedcoding/receipthero#readme",
+  "homepage": "https://github.com/abdtriedcoding/slipwise#readme",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
