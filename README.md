@@ -4,7 +4,11 @@
 </a>
 
 <p align="center">
-  An open source receipt management app with AI-powered OCR. Powered by Cohere.
+  Slipwise turns receipt photos into a clean spend record. Upload an image and Cohere's vision model reads the vendor, date, amount and category, then totals everything in one place. Your receipts stay in your browser.
+</p>
+
+<p align="center">
+  <img src="./screenshot.png" alt="Slipwise spend record" width="800">
 </p>
 
 ## Tech stack
