@@ -1,5 +1,4 @@
 <a href="https://github.com/abdtriedcoding/slipwise">
-  <img alt="Slipwise" src="./public/og.png">
   <h1 align="center">Slipwise</h1>
 </a>
 
